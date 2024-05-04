@@ -4,19 +4,34 @@ const submitBtn = document.querySelector('.button')
 const rows = document.querySelectorAll('.row')
 const tbody = document.querySelector('#output')
 const newBtn = document.querySelector('#new-btn')
-const viewBtn = document.querySelector('#new-btn')
+const viewBtn = document.querySelector('#view-btn')
 
 console.log(userInfo)
 
 newBtn.addEventListener('click',(e)=>{
   const userForm = document.querySelector('#form')
+  const formClass = userForm.classList
+  if(formClass[1]==='hide'){
+    formClass.remove('hide')
+  } else {
+    formClass.add('hide')
+  }
   const {fname, lname, city, website} = userForm
   fname.value = ""
   lname.value = ""
   city.value = ""
   website.value = ""
 })
-
+viewBtn.addEventListener('click',()=>{
+  console.log('viewBth button clicked!')
+  const table = document.querySelector('#table')
+  const tableClass = table.classList
+  if(tableClass[0] ==='hide'){
+    tableClass.remove('hide')
+  } else {
+    tableClass.add('hide')
+  }
+})
 const users = [
   {
     id: 1,
