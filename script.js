@@ -1,10 +1,11 @@
 const userInfo = document.querySelector('#form')
 const table = document.querySelector('table')
-const submitBtn = document.querySelector('.button')
 const rows = document.querySelectorAll('.row')
 const tbody = document.querySelector('#output')
+const submitBtn = document.querySelector('.button')
 const newBtn = document.querySelector('#new-btn')
 const viewBtn = document.querySelector('#view-btn')
+const clearBtn = document.querySelector('.clear-btn')
 
 console.log(userInfo)
 
@@ -16,11 +17,7 @@ newBtn.addEventListener('click',(e)=>{
   } else {
     formClass.add('hide')
   }
-  const {fname, lname, city, website} = userForm
-  fname.value = ""
-  lname.value = ""
-  city.value = ""
-  website.value = ""
+  clearForm(userForm)
 })
 viewBtn.addEventListener('click',()=>{
   console.log('viewBth button clicked!')
@@ -32,6 +29,18 @@ viewBtn.addEventListener('click',()=>{
     tableClass.add('hide')
   }
 })
+
+clearBtn.addEventListener('click', (e) => {
+  const userForm = document.querySelector('#form')
+  clearForm(userForm)
+})
+function clearForm (userForm) {
+  const {fname, lname, city, website} = userForm
+  fname.value = ""
+  lname.value = ""
+  city.value = ""
+  website.value = ""
+}
 const users = [
   {
     id: 1,
