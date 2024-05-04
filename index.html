@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Data Collection Demo</title>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li id='new-btn'>New</li>
+      <li id="viewBtn">view</li>
+    </ul>
+  </nav>
+  <form id='form' class="form " action="submit">
+    <input id="fname" class="fname" type="text" placeholder="first name">
+    <input id="lname" class="lname" type="text" placeholder="last name">
+    <input id="city" class="city" type="text" placeholder="city">
+    <input id="website" class="website" type="text" placeholder="website">
+    <input class="button" type="button" value="Submit">
+  </form>
+  
+  <table class="hide">
+    <header>
+      <tr>
+        <th>id</th>
+        <th>first</th>
+        <th>last</th>
+        <th>city</th>
+        <th>website</th>
+        <th></th>
+      </tr>
+    </header>
+    <tbody id="output">
+      
+    </tbody>
+  </table>
+</body>
+</html>
