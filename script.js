@@ -7,7 +7,20 @@ const newBtn = document.querySelector('#new-btn')
 const viewBtn = document.querySelector('#view-btn')
 const clearBtn = document.querySelector('.clear-btn')
 
-console.log(userInfo)
+// const deleteBtn = document.querySelectorAll('.delete')
+
+function getDeleteBtns(){
+  const deleteBtn = document.querySelectorAll('.delete')
+  console.log('deleteBtns',deleteBtn)
+  let i = 0
+  deleteBtn.forEach((xBtn)=>{
+    xBtn.addEventListener('click', (e)=>{
+      e.preventDefault()
+      console.log('delete button clicked')
+    })
+    i++
+  })
+}
 
 newBtn.addEventListener('click',(e)=>{
   const userForm = document.querySelector('#form')
@@ -28,6 +41,7 @@ viewBtn.addEventListener('click',()=>{
   } else {
     tableClass.add('hide')
   }
+  // getDeleteBtns()
 })
 
 clearBtn.addEventListener('click', (e) => {
@@ -99,7 +113,9 @@ function initLoad (){
 
   })
 }
+
 initLoad()
+
 submitBtn.addEventListener ('click', (e)=>{
   e.preventDefault()
   let userId = users[users.length-1].id
@@ -137,10 +153,4 @@ function showNewUsers(userId,userInfo){
   tbody.append(row)
 }
 
-function getUsers(){
-  // let userId = users[users.length-1].id
-  // users.forEach((user)=>{
-  //   showUsers(userInfo)
-  // })
-}
-getUsers()
+getDeleteBtns()
